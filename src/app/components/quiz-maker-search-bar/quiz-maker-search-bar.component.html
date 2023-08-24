@@ -1,0 +1,31 @@
+<div class="field mt-4">
+  <form [formGroup]="quizMakerForm">
+    <div class="columns">
+      <div class="column is-4">
+        <div class="select is-fullwidth">
+          <select id="categorySelect" formControlName="category">
+            <option value="" selected disabled>Select a category</option>
+            <option [value]="opt.optionValue" *ngFor="let opt of categories">
+              {{ opt.visualValue }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="select is-fullwidth">
+          <select id="difficultySelect" formControlName="difficulty">
+            <option value="" selected disabled>Select difficulty</option>
+            <option [value]="opt.optionValue" *ngFor="let opt of difficulties">
+              {{ opt.visualValue }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="column">
+        <button class="button is-primary is-fullwidth" (click)="createQuiz()">Create</button>
+      </div>
+    </div>
+  </form>
+</div>
