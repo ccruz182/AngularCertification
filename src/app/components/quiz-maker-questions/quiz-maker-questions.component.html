@@ -1,0 +1,17 @@
+<div *ngIf="showFlag" class="mt-3">
+  <div class="mb-4" *ngFor="let qq of quizQuestions; index as numQuestion">
+    <p [innerHTML]="qq.question" class="mb-2"></p>
+    <div id="answer-zone" class="is-inline mt-6">
+      <button
+        class="button is-success ml-2"
+        [ngClass]="{'is-outlined': !ans.isSelected}"
+        *ngFor="let ans of qq.possibleAnswers"
+        [innerHTML]="ans.text"
+        (click)="answerClick(numQuestion, ans)"
+      ></button>
+    </div>
+  </div>
+  <div class="is-fullwidth">
+    <button class="button is-rounded is-link is-fullwidth" *ngIf="answersFG.valid" (click)="submitQuiz()">Submit</button>
+  </div>
+</div>

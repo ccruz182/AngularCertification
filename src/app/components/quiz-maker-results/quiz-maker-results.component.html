@@ -1,0 +1,25 @@
+<div class="mb-3">
+  <div class="mb-4" *ngFor="let fr of finalResults; index as numQuestion">
+    <p [innerHTML]="fr.question" class="mb-2"></p>
+    <div id="answer-zone" class="is-inline mt-6">
+      <button
+        class="button ml-2"
+        [ngClass]="ans.guiClass"
+        *ngFor="let ans of fr.answers"
+        [innerHTML]="ans.text"
+      ></button>
+    </div>
+  </div>
+
+  <div class="is-fullwidth has-text-centered">
+    <p class="tag is-medium" [ngClass]="finalScoreClass">
+      You scored {{ finalScore }} out of 5
+    </p>
+  </div>
+
+  <div class="is-fullwidth mt-4">
+    <button class="button is-rounded is-link is-fullwidth" (click)="newQuiz()">
+      Create a new quiz
+    </button>
+  </div>
+</div>

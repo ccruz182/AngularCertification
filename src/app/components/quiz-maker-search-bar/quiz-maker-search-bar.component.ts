@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { QuizMakerSelectOption } from '../../models/QuizMakerSelectOption.model';
-import { QuizService } from 'src/app/services/quiz.service';
+import { QuizService } from '../../services/quiz.service';
 
 @Component({
   selector: 'quiz-maker-search-bar',
@@ -52,6 +52,9 @@ export class QuizMakerSearchBarComponent implements OnInit {
   }
 
   createQuiz(): void {
-    console.log('---', this.quizMakerForm);
+    this._quizService.setSelection({
+      category: this.quizMakerForm.controls['category'].value,
+      difficulty: this.quizMakerForm.controls['difficulty'].value,
+    });
   }
 }
