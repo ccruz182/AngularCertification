@@ -2,12 +2,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
 import { QuizSelection } from '../../models/QuizSelection.model';
-import { APIQuestionResponse } from 'src/app/models/APIQuestionResponse.model';
-import { APIQuestionResultResponse } from 'src/app/models/APIQuestionResponse.model';
+import { APIQuestionResponse } from '../../models/APIQuestionResponse.model';
+import { APIQuestionResultResponse } from '../../models/APIQuestionResponse.model';
 import {
   QuizQuestion,
   QuizQuestionPossibleAnswer,
-} from 'src/app/models/QuizQuestion.model';
+} from '../../models/QuizQuestion.model';
 import { Router } from '@angular/router';
 
 @Component({

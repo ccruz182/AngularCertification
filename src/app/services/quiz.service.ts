@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { APICategoryResponse } from '../models/APICategoryResponse.model';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { QuizSelection } from '../models/QuizSelection.model';
 import { APIQuestionResponse } from '../models/APIQuestionResponse.model';
 import { QuizQuestion } from '../models/QuizQuestion.model';

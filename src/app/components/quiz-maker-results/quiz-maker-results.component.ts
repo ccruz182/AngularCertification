@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuizQuestion } from 'src/app/models/QuizQuestion.model';
-import { QuizResult, QuizResultAnswer } from 'src/app/models/QuizResult.model';
-import { QuizService } from 'src/app/services/quiz.service';
+import { QuizQuestion } from '../../models/QuizQuestion.model';
+import { QuizResult, QuizResultAnswer } from '../../models/QuizResult.model';
+import { QuizService } from '../../services/quiz.service';
 
 @Component({
   selector: 'quiz-maker-results',
@@ -17,7 +17,7 @@ export class QuizMakerResultsComponent implements OnInit {
   constructor(private _quizService: QuizService, private _router: Router) {
     this.finalResults = [];
     this.finalScore = 0;
-    this.finalScoreClass = "";
+    this.finalScoreClass = '';
   }
 
   ngOnInit(): void {
@@ -55,11 +55,11 @@ export class QuizMakerResultsComponent implements OnInit {
     );
 
     if (this.finalScore >= 0 && this.finalScore <= 1) {
-      this.finalScoreClass = "is-danger";
+      this.finalScoreClass = 'is-danger';
     } else if (this.finalScore >= 2 && this.finalScore <= 3) {
-      this.finalScoreClass = "is-warning";
+      this.finalScoreClass = 'is-warning';
     } else {
-      this.finalScoreClass = "is-success"
+      this.finalScoreClass = 'is-success';
     }
   }
 
