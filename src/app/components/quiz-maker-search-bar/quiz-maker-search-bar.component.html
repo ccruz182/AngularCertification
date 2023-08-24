@@ -24,7 +24,13 @@
       </div>
 
       <div class="column">
-        <button class="button is-primary is-fullwidth" (click)="createQuiz()">Create</button>
+        <button
+          class="button is-primary is-fullwidth"
+          (click)="createQuiz()"
+          [disabled]="quizMakerForm.invalid"
+        >
+          Create
+        </button>
       </div>
     </div>
   </form>

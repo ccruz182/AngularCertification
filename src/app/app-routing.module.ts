@@ -5,7 +5,14 @@ const routes: Routes = [
   {
     path: 'quizes',
     loadChildren: () =>
-      import('./pages/quizes-page/quizes-page.module').then((m) => m.QuizesPageModule),
+      import('./pages/quizes-page/quizes-page.module').then(
+        (m) => m.QuizesPageModule
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: '/quizes',
+    pathMatch: 'full',
   },
 ];
 
