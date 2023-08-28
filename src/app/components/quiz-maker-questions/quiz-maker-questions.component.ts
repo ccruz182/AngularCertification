@@ -40,6 +40,7 @@ export class QuizMakerQuestionsComponent implements OnInit {
     this._quizService.selection$.subscribe((selection: QuizSelection) => {
       this.showFlag = true;
       this.quizQuestions = []; // Restart everytime a click is received.
+      this.answersFG.reset();
       this._quizService
         .getQuestions(selection)
         .subscribe((questions: APIQuestionResponse) => {
